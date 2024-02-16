@@ -1,0 +1,52 @@
+[package]
+name = "dist-rust-buted"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+  name = "hello"
+  path = "src/hello/server.rs"
+
+[[bin]]
+  name = "hello-client"
+  path = "src/hello/client.rs"
+
+[[bin]]
+  name = "svc-dsc"
+  path = "src/svc_dsc/server/main.rs"
+
+[[bin]]
+  name = "svc-mat-add"
+  path = "src/svc_mat/add/server.rs"
+
+[[bin]]
+  name = "svc-mat-div"
+  path = "src/svc_mat/div/server.rs"
+
+[[bin]]
+  name = "svc-mat-mul"
+  path = "src/svc_mat/mul/server.rs"
+
+[[bin]]
+  name = "svc-mat-sub"
+  path = "src/svc_mat/sub/server.rs"
+
+[[bin]]
+  name = "svc-mat"
+  path = "src/svc_mat/calc/server.rs"
+
+[dependencies]
+anyhow = "1.0.69"
+dotenv = "0.15.0"
+futures = "0.3.25"
+http = "0.2.8"
+hyper = "0.14.23"
+prost = "0.11.3"
+thiserror = "1.0.38"
+tokio = { version = "1.22.0", features = ["macros", "rt-multi-thread", "signal"] }
+tonic = "0.8.3"
+
+[build-dependencies]
+tonic-build = "0.8.4"
